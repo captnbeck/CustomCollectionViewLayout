@@ -38,18 +38,18 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
         
         if indexPath.section == 0 {
             if indexPath.row == 0 {
-                let dateCell : DateCollectionViewCell = collectionView .dequeueReusableCell(withReuseIdentifier: dateCellIdentifier, for: indexPath) as! DateCollectionViewCell
+                let dateCell : DateCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: dateCellIdentifier, for: indexPath) as! DateCollectionViewCell
                 dateCell.backgroundColor = UIColor.white
                 dateCell.dateLabel.font = UIFont.systemFont(ofSize: 13)
                 dateCell.dateLabel.textColor = UIColor.black
-                dateCell.dateLabel.text = "Date"
+                dateCell.dateLabel.text = "A(\(indexPath.row), \(indexPath.section))"
                 
                 return dateCell
             } else {
-                let contentCell : ContentCollectionViewCell = collectionView .dequeueReusableCell(withReuseIdentifier: contentCellIdentifier, for: indexPath) as! ContentCollectionViewCell
+                let contentCell : ContentCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: contentCellIdentifier, for: indexPath) as! ContentCollectionViewCell
                 contentCell.contentLabel.font = UIFont.systemFont(ofSize: 13)
                 contentCell.contentLabel.textColor = UIColor.black
-                contentCell.contentLabel.text = "Section"
+                contentCell.contentLabel.text = "B(\(indexPath.row), \(indexPath.section))"
                 
                 if indexPath.section % 2 != 0 {
                     contentCell.backgroundColor = UIColor(white: 242/255.0, alpha: 1.0)
@@ -76,7 +76,7 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
                 let contentCell : ContentCollectionViewCell = collectionView .dequeueReusableCell(withReuseIdentifier: contentCellIdentifier, for: indexPath) as! ContentCollectionViewCell
                 contentCell.contentLabel.font = UIFont.systemFont(ofSize: 13)
                 contentCell.contentLabel.textColor = UIColor.black
-                contentCell.contentLabel.text = "Content"
+                contentCell.contentLabel.text = "(\(indexPath.row), \(indexPath.section))"
                 if indexPath.section % 2 != 0 {
                     contentCell.backgroundColor = UIColor(white: 242/255.0, alpha: 1.0)
                 } else {
